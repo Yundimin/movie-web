@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Tabs, Tab, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Tab, Button } from "@mui/material";
 import { NavbarWrapper } from "../styles/Header.modules";
 
 const menuItems = [
