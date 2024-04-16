@@ -1,9 +1,11 @@
+import { SyncTwoTone } from "@mui/icons-material";
 import styled from "styled-components";
 
 /*
 
 */
 
+// Headers.tsx file
 export const NavbarWrapper = styled.div`
   .logo {
     color: #fff;
@@ -36,3 +38,7 @@ export const NavbarWrapper = styled.div`
     }
   }
 `;
+
+// DisplayItems.tsx
+
+export const MovieShowsWrapper = styled.div``;
