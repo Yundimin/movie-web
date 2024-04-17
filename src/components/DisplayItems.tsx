@@ -88,9 +88,6 @@ const DisplayItems: React.FC<DataProps> = ({
 
   return (
     <MovieShowsWrapper>
-      <div style={{ position: "relative", top: "100px" }}>
-        <h1> {itemHeading}</h1>
-      </div>
       {!loading ? (
         <div className="loadingOverlay">
           <CircularProgress size={50} color="warning" />
@@ -107,8 +104,8 @@ const DisplayItems: React.FC<DataProps> = ({
               const percentage = (items.vote_average / 10) * 100;
 
               return (
-                <>
-                  <div className="movie" key={items.id}>
+                <div key={items.id}>
+                  <div className="movie">
                     <div className="movieImage">
                       <img
                         src={`https://image.tmdb.org/t/p/w200/${items.poster_path}`}
@@ -132,7 +129,7 @@ const DisplayItems: React.FC<DataProps> = ({
                       )}
                     </div>
                   </div>
-                </>
+                </div>
               );
             })}
 
@@ -148,7 +145,7 @@ const DisplayItems: React.FC<DataProps> = ({
                   Page <b>{currentPage}</b>
                 </p>
                 {currentPage < totalPages && (
-                  <button className="btnPrev" onClick={nextItemsPage}>
+                  <button className="btnNext" onClick={nextItemsPage}>
                     Next
                   </button>
                 )}
