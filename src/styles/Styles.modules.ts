@@ -22,13 +22,25 @@ export const NavbarWrapper = styled.div`
     margin-left: auto;
   }
 
-  .navLinks {
+  .navLinks a.active {
+    border-radius: 10px;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    color: #fff;
+    margin: 20px 0;
+    padding: 15px 0;
   }
 
   .links {
     font-family: "Acme", sans-serif;
     font-size: 20px;
-    color: #fff;
+    color: #ffffffe4;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.07);
+      color: #eaff00;
+    }
   }
 
   @media (max-width: 1060px) {
@@ -199,7 +211,7 @@ export const Cover = styled.div`
   .coverText {
     position: absolute;
     color: #fff;
-    top: 45%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -225,20 +237,100 @@ export const Cover = styled.div`
     }
   }
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 300px;
     background-color: rgba(3, 37, 65, 0.7);
+    border-bottom-left-radius: 240px;
+    border-bottom-right-radius: 240px;
   }
 
   > img {
     height: 300px;
     width: 100%;
+    border-bottom-left-radius: 240px;
+    border-bottom-right-radius: 240px;
+  }
+
+  @media (max-width: 1020px) {
+    .coverText {
+      letter-spacing: 1px;
+      line-height: 0%.2px;
+      > h1 {
+        font-size: 2.2rem;
+      }
+      > p,
+      em {
+        font-size: 15px;
+      }
+    }
+    &::before,
+    img {
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 5.2rem auto 0;
+    .coverText {
+      line-height: 1;
+      > h1 {
+        font-size: 2.2rem;
+      }
+      > p,
+      em {
+        font-size: 15px;
+      }
+    }
+
+    &::before,
+    img {
+      height: 200px;
+      border-bottom-left-radius: 0%;
+      border-bottom-right-radius: 0%;
+    }
   }
 `;
 
-export const SearchBar = styled.div``;
+export const SearchBar = styled.div`
+  > input,
+  > button {
+    margin: auto;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  > input {
+    height: 45px;
+    width: 70%;
+    box-shadow: 1px 1px 6px 2px grey;
+    padding: 10px;
+    font-size: 18px;
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+
+  > button {
+    padding: 14px 25px;
+    left: 81%;
+    font-size: 15px;
+    background: linear-gradient(
+      90deg,
+      rgba(15, 255, 184, 1) 33%,
+      rgba(7, 110, 112, 1) 100%
+    );
+    font-weight: bolder;
+    cursor: pointer;
+  }
+`;
